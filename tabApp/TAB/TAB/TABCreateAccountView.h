@@ -10,6 +10,17 @@
 
 @interface TABCreateAccountView : UIView
 
+@property NSDateFormatter *dateFormat;
+@property UITextField *firstNameTextField;
+@property UITextField *lastNameTextField;
+@property UITextField *emailTextField;
+@property UITextField *phoneNumberTextField;
+@property UITextField *zipCodeTextField;
+@property UITextField *birthDateTextField;
+@property UITextField *passwordTextField;
+@property UITextField *confirmPasswordTextField;
+@property UILabel *validationMessageLabel;
+
 - (void)configureView;
 
 @end

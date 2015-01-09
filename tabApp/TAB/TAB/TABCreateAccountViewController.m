@@ -25,8 +25,72 @@
 }
 
 -(void) doCancel {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     // Dismiss this Presented View Controller
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) doCreateAccount {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    
+    
+}
+
+
+// Adopted from: http://stackoverflow.com/questions/6052966/phone-number-formatting
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField == ((TABCreateAccountView*)self.view).phoneNumberTextField) {
+        int length = [self getLength:textField.text];
+        
+        if(length == 10) {
+            if(range.length == 0)
+                return NO;
+        }
+        
+        if(length == 3) {
+            NSString *num = [self formatNumber:textField.text];
+            textField.text = [NSString stringWithFormat:@"(%@) ",num];
+            if(range.length > 0)
+                textField.text = [NSString stringWithFormat:@"%@",[num substringToIndex:3]];
+        }
+        else if(length == 6) {
+            NSString *num = [self formatNumber:textField.text];
+            textField.text = [NSString stringWithFormat:@"(%@) %@-",[num  substringToIndex:3],[num substringFromIndex:3]];
+            if(range.length > 0)
+                textField.text = [NSString stringWithFormat:@"(%@) %@",[num substringToIndex:3],[num substringFromIndex:3]];
+        }
+    }
+    return YES;
+}
+
+-(NSString*)formatNumber:(NSString*)phoneTextNumber
+{
+    phoneTextNumber = [phoneTextNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    phoneTextNumber = [phoneTextNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
+    phoneTextNumber = [phoneTextNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+    phoneTextNumber = [phoneTextNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    phoneTextNumber = [phoneTextNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    
+    int length = (int)[phoneTextNumber length];
+    if(length > 10) {
+        phoneTextNumber = [phoneTextNumber substringFromIndex: length-10];
+    }
+    return phoneTextNumber;
+}
+
+
+-(int)getLength:(NSString*)mobileNumber
+{
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    
+    int length = (int)[mobileNumber length];
+    return length;
 }
 
 @end

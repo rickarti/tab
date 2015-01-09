@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TABCreateAccountViewController : UIViewController
+@interface TABCreateAccountViewController : UIViewController <UITextFieldDelegate>
+
+-(void) doCancel;
+
+-(void) doCreateAccount;
 
 @end
