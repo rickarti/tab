@@ -10,6 +10,10 @@
 
 @interface TABSignInView : UIView
 
+@property UITextField* emailTextField;
+
+@property UITextField* passwordTextField;
+
 - (void)configureView;
 
 @end

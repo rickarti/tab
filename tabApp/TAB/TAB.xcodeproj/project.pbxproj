@@ -21,6 +21,8 @@
 		942789221A5F2BC000B407C3 /* TABAccountServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789211A5F2BC000B407C3 /* TABAccountServices.m */; };
 		942789251A5F2C0A00B407C3 /* TABSignInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789241A5F2C0A00B407C3 /* TABSignInModel.m */; };
 		942789281A5F2C2300B407C3 /* TABCreateAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789271A5F2C2300B407C3 /* TABCreateAccountModel.m */; };
+		9427892B1A5F3F3700B407C3 /* TABUIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427892A1A5F3F3700B407C3 /* TABUIUtil.m */; };
+		9427892E1A5F79C700B407C3 /* TABImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427892D1A5F79C700B407C3 /* TABImageFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		942789241A5F2C0A00B407C3 /* TABSignInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABSignInModel.m; sourceTree = "<group>"; };
 		942789261A5F2C2300B407C3 /* TABCreateAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABCreateAccountModel.h; sourceTree = "<group>"; };
 		942789271A5F2C2300B407C3 /* TABCreateAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABCreateAccountModel.m; sourceTree = "<group>"; };
+		942789291A5F3F3700B407C3 /* TABUIUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABUIUtil.h; sourceTree = "<group>"; };
+		9427892A1A5F3F3700B407C3 /* TABUIUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABUIUtil.m; sourceTree = "<group>"; };
+		9427892C1A5F79C700B407C3 /* TABImageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABImageFactory.h; sourceTree = "<group>"; };
+		9427892D1A5F79C700B407C3 /* TABImageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABImageFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 				942788F01A5F1F8700B407C3 /* Images.xcassets */,
 				942788F21A5F1F8700B407C3 /* LaunchScreen.xib */,
 				942788E31A5F1F8700B407C3 /* Supporting Files */,
+				942789291A5F3F3700B407C3 /* TABUIUtil.h */,
+				9427892A1A5F3F3700B407C3 /* TABUIUtil.m */,
+				9427892C1A5F79C700B407C3 /* TABImageFactory.h */,
+				9427892D1A5F79C700B407C3 /* TABImageFactory.m */,
 			);
 			path = TAB;
 			sourceTree = "<group>";
@@ -300,11 +310,13 @@
 				942789101A5F239E00B407C3 /* TABInitialViewController.m in Sources */,
 				942789131A5F23C300B407C3 /* TABInitialView.m in Sources */,
 				9427891C1A5F2A7000B407C3 /* TABCreateAccountViewController.m in Sources */,
+				9427892B1A5F3F3700B407C3 /* TABUIUtil.m in Sources */,
 				942789191A5F2A5200B407C3 /* TABSignInViewController.m in Sources */,
 				942789281A5F2C2300B407C3 /* TABCreateAccountModel.m in Sources */,
 				942789251A5F2C0A00B407C3 /* TABSignInModel.m in Sources */,
 				942788E91A5F1F8700B407C3 /* AppDelegate.m in Sources */,
 				942788E61A5F1F8700B407C3 /* main.m in Sources */,
+				9427892E1A5F79C700B407C3 /* TABImageFactory.m in Sources */,
 				942789221A5F2BC000B407C3 /* TABAccountServices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

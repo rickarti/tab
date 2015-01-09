@@ -8,6 +8,8 @@
 
 #import "TABInitialViewController.h"
 #import "TABInitialView.h"
+#import "TABSignInViewController.h"
+#import "TABCreateAccountViewController.h"
 
 @implementation TABInitialViewController
 
@@ -20,11 +22,15 @@
 }
 
 -(void) doSignIn {
-    // TODO : present Sign In View Controller
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    // Present Sign In View Controller
+    [self presentViewController:[TABSignInViewController new] animated:YES completion:nil];
 }
 
 -(void) doCreateAccount {
-    // TODO : present Create Account View Controller
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    // Present Create Account View Controller
+    [self presentViewController:[TABCreateAccountViewController new] animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

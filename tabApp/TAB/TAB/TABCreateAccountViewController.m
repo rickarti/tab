@@ -25,7 +25,8 @@
 }
 
 -(void) doCancel {
-    // TODO dismiss this Presented View Controller
+    // Dismiss this Presented View Controller
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

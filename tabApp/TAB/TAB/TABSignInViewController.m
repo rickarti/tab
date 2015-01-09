@@ -25,7 +25,22 @@
 }
 
 -(void) doCancel {
-    // TODO dismiss this Presented View Controller
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    // Dismiss this Presented View Controller
+    
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) doSignIn {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 @end
