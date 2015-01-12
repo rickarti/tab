@@ -27,6 +27,7 @@
 -(void) doCancel {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     // Dismiss this Presented View Controller
+    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -35,6 +36,12 @@
     
     
     
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    // done button was pressed - dismiss keyboard
+    [textField resignFirstResponder];
+    return YES;
 }
 
 
@@ -91,6 +98,11 @@
     
     int length = (int)[mobileNumber length];
     return length;
+}
+
+-(void) dismissKeyboardEditing {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self.view endEditing:TRUE];
 }
 
 @end

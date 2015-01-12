@@ -17,6 +17,11 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
     self.backgroundColor = [UIColor whiteColor];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardEditing)];
+    // prevents the scroll view from swallowing up the touch event of child buttons
+    tapGesture.cancelsTouchesInView = NO;
+    [self addGestureRecognizer:tapGesture];
+    
     UIButton *cancelButton = [[UIButton alloc] init];
     [cancelButton setImage:[TABImageFactory createCancelImage] forState:UIControlStateNormal];
     cancelButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -45,7 +50,7 @@
     [signInButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     signInButton.backgroundColor = [TABUIUtil colorWithHex:0x0FAAD2];
     signInButton.layer.borderWidth = 1.0f;
-    signInButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    signInButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     signInButton.layer.cornerRadius = 4.0f;
     [self addSubview:signInButton];
     
@@ -108,6 +113,11 @@
     textField.layer.borderColor = [UIColor lightGrayColor].CGColor;
     textField.layer.cornerRadius = 6.0f;
     return textField;
+}
+
+-(void) dismissKeyboardEditing {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self endEditing:TRUE];
 }
 
 @end

@@ -14,4 +14,6 @@
 
 -(void) doCreateAccount;
 
+-(void) dismissKeyboardEditing;
+
 @end
