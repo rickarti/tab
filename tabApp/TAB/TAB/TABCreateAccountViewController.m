@@ -17,6 +17,8 @@
     if(self.view){
         [((TABCreateAccountView*)self.view) configureView];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +38,11 @@
     
     
     
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    self.firstResponderTextField = textField;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -98,6 +105,30 @@
     
     int length = (int)[mobileNumber length];
     return length;
+}
+
+-(void) keyboardWillShow: (NSNotification*) notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    NSDictionary *dic = [notification userInfo];
+    CGRect keyboardRect = [[dic objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSLog(@"Keyboard Rect: %@", NSStringFromCGRect(keyboardRect));
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    NSLog(@"Keyboard Rect: %@", NSStringFromCGRect(keyboardRect));
+    CGRect textFieldRect = self.firstResponderTextField.frame;
+    NSLog(@"Responder Rect: %@", NSStringFromCGRect(textFieldRect));
+    
+    NSLog(@"Keyboard Origin y: %f", keyboardRect.origin.y);
+    NSLog(@"TextField Max y: %f", CGRectGetMaxX(textFieldRect));
+    
+    if (keyboardRect.origin.y < CGRectGetMaxX(textFieldRect)) {
+        NSLog(@"Need to scroll to visible");
+    }
+    
+}
+
+-(void) keyboardWillHide: (NSNotification*) notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 -(void) dismissKeyboardEditing {

@@ -10,10 +10,16 @@
 
 @interface TABCreateAccountViewController : UIViewController <UITextFieldDelegate>
 
+@property UITextField *firstResponderTextField;
+
 -(void) doCancel;
 
 -(void) doCreateAccount;
 
 -(void) dismissKeyboardEditing;
+
+-(void) keyboardWillShow: (NSNotification*) notification;
+
+-(void) keyboardWillHide: (NSNotification*) notification;
 
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TABSignInModel.h"
 
-@interface TABCreateAccountModel : NSObject
+@interface TABCreateAccountModel : TABSignInModel
+
+@property NSString *firstName;
+@property NSString *lastName;
+@property NSString *phoneNumber;
+@property NSString *zipCode;
+@property NSDate *dateOfBirth;
 
 @end

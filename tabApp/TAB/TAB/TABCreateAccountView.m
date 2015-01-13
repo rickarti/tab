@@ -225,6 +225,7 @@
     textField.layer.borderWidth = 1.0f;
     textField.layer.borderColor = [UIColor lightGrayColor].CGColor;
     textField.layer.cornerRadius = 6.0f;
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
     return textField;
 }
 

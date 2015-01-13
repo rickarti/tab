@@ -10,4 +10,7 @@
 
 @interface TABSignInModel : NSObject
 
+@property NSString *email;
+@property NSString *password;
+
 @end
