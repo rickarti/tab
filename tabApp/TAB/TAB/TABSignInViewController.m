@@ -33,6 +33,15 @@
 
 -(void) doSignIn {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    if(![((TABSignInView*)self.view).emailTextField.text length]>0 || ![((TABSignInView*)self.view).passwordTextField.text length]>0){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Invalid Log In" message:@"Enter Email and Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    } else {
+        // TODO: Actually Call the Service and check : async call with callback in UIThread
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Invalid Log In" message:@"Invalid Email or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
