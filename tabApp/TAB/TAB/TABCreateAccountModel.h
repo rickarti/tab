@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TABSignInModel.h"
 
-@interface TABCreateAccountModel : TABSignInModel
+@interface TABCreateAccountModel : TABSignInModel <NSCoding>
 
 @property NSString *firstName;
 @property NSString *lastName;

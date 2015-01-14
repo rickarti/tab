@@ -104,6 +104,9 @@
                           constraintsWithVisualFormat: @"V:[_validationMessageLabel(20)]-[createAccountButton]-40-|"
                           options:0 metrics:nil views:viewsDictionary]];
     [self addConstraints:[NSLayoutConstraint
+                          constraintsWithVisualFormat: @"H:|-20-[_validationMessageLabel]-20-|"
+                          options:0 metrics:nil views:viewsDictionary]];
+    [self addConstraints:[NSLayoutConstraint
                           constraintsWithVisualFormat: @"H:|-20-[createAccountButton]-20-|"
                           options:0 metrics:nil views:viewsDictionary]];
     
