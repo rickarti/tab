@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class TABCreateAccountModel;
+@class TABSignInModel;
+
 @interface TABAccountServices : NSObject
+
+-(BOOL) signIn: (TABSignInModel *) signInModel;
+
+-(BOOL) accountExists: (TABCreateAccountModel *) account;
+
+-(BOOL) createAccount: (TABCreateAccountModel *) account;
+
+-(TABCreateAccountModel *) getAccount: (NSString *) email;
 
 @end

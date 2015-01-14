@@ -10,4 +10,24 @@
 
 @implementation TABAccountServices
 
+-(BOOL) signIn: (TABSignInModel *) signInModel {
+ 
+    return TRUE;
+}
+
+-(BOOL) accountExists: (TABCreateAccountModel *) account {
+    
+    return TRUE;
+}
+
+-(BOOL) createAccount: (TABCreateAccountModel *) account {
+    
+    return TRUE;
+}
+
+-(TABCreateAccountModel *) getAccount: (NSString *) email {
+   
+    return nil;
+}
+
 @end
