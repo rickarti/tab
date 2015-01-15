@@ -15,7 +15,7 @@
 
 -(BOOL) signIn: (TABSignInModel *) signInModel;
 
--(BOOL) accountExists: (TABCreateAccountModel *) account;
+-(BOOL) accountExists: (NSString *) path;
 
 -(BOOL) createAccount: (TABCreateAccountModel *) account;
 

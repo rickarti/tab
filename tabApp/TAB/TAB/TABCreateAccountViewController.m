@@ -8,6 +8,8 @@
 
 #import "TABCreateAccountViewController.h"
 #import "TABCreateAccountView.h"
+#import "TABAccountServices.h"
+#import "TABCreateAccountModel.h"
 
 @implementation TABCreateAccountViewController
 
@@ -100,9 +102,19 @@
     }
     [self createAccountView].validationMessageLabel.text = nil;
     
+    TABCreateAccountModel *model = [TABCreateAccountModel new];
+    model.email = [self createAccountView].emailTextField.text;
+    model.firstName = [self createAccountView].firstNameTextField.text;
+    model.lastName = [self createAccountView].lastNameTextField.text;
+    model.zipCode = [self createAccountView].zipCodeTextField.text;
+    model.phoneNumber = [self createAccountView].phoneNumberTextField.text;
+    model.password = [self createAccountView].passwordTextField.text;
+    model.email = [self createAccountView].emailTextField.text;
+    model.dateOfBirth = dateOfBirth;
     
+    bool success = [[TABAccountServices new] createAccount:model];
     
-    
+    NSLog(@"Success : %i", success);
 }
 
 -(bool) validateField:(UITextField *) field placeholderText: (NSString *) text {
