@@ -13,7 +13,16 @@
 
 -(BOOL) signIn: (TABSignInModel *) signInModel {
  
-    return TRUE;
+    NSString *dataPath = [self getDataPathForAccount:signInModel];
+    
+    if (![self accountExists:dataPath]) {
+        NSLog(@"Account does not exits at : %@", dataPath);
+        return FALSE;
+    }
+    
+    TABCreateAccountModel *model = [self getAccount:dataPath];
+    
+    return [signInModel.password isEqualToString:model.password];
 }
 
 -(BOOL) accountExists: (NSString *) path {
@@ -45,18 +54,14 @@
     return TRUE;
 }
 
--(TABCreateAccountModel *) getAccount: (NSString *) email {
-   
-    return nil;
+-(TABCreateAccountModel *) getAccount: (NSString *) dataPath {
+    
+    TABCreateAccountModel *account = [NSKeyedUnarchiver unarchiveObjectWithFile:dataPath];
+    NSLog(@"%@", account);
+    return account;
 }
 
--(NSDictionary *) getAllAccounts {
-    
-    
-    return nil;
-}
-
--(NSString *) getDataPathForAccount: (TABCreateAccountModel *) account {
+-(NSString *) getDataPathForAccount: (TABSignInModel *) account {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
     NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:@"/accounts"];

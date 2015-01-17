@@ -8,6 +8,8 @@
 
 #import "TABSignInViewController.h"
 #import "TABSignInView.h"
+#import "TABAccountServices.h"
+#import "TABSignInModel.h"
 
 @implementation TABSignInViewController
 
@@ -34,14 +36,30 @@
 -(void) doSignIn {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
-    if(![((TABSignInView*)self.view).emailTextField.text length]>0 || ![((TABSignInView*)self.view).passwordTextField.text length]>0){
+    TABSignInModel *signInModel = [TABSignInModel new];
+    signInModel.email = ((TABSignInView*)self.view).emailTextField.text;
+    signInModel.password = ((TABSignInView*)self.view).passwordTextField.text;
+    
+    if(!signInModel.email.length>0 || !signInModel.password.length>0){
+        NSLog(@"%s - Invalid Entrie(s)", __PRETTY_FUNCTION__);
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Invalid Log In" message:@"Enter Email and Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
-    } else {
-        // TODO: Actually Call the Service and check : async call with callback in UIThread
+        return;
+    }
+    
+    if (![[TABAccountServices new] signIn:signInModel]) {
+        NSLog(@"%s - Sign in Failure", __PRETTY_FUNCTION__);
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Invalid Log In" message:@"Invalid Email or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
+        return;
     }
+    NSLog(@"TODO: Sign in success, transition to next view");
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    // done button was pressed - dismiss keyboard
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
