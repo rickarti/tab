@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Okidok Studios. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "TABCreateAccountViewController.h"
 #import "TABCreateAccountView.h"
 #import "TABAccountServices.h"
@@ -115,6 +116,11 @@
     bool success = [[TABAccountServices new] createAccount:model];
     
     NSLog(@"Success : %i", success);
+    
+    if (success) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate loadMapView];
+    }
 }
 
 -(bool) validateField:(UITextField *) field placeholderText: (NSString *) text {

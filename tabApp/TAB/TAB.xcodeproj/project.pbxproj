@@ -23,6 +23,8 @@
 		942789281A5F2C2300B407C3 /* TABCreateAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789271A5F2C2300B407C3 /* TABCreateAccountModel.m */; };
 		9427892B1A5F3F3700B407C3 /* TABUIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427892A1A5F3F3700B407C3 /* TABUIUtil.m */; };
 		9427892E1A5F79C700B407C3 /* TABImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427892D1A5F79C700B407C3 /* TABImageFactory.m */; };
+		942789321A6B17C900B407C3 /* TABMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789311A6B17C900B407C3 /* TABMapViewController.m */; };
+		942789351A6B17F400B407C3 /* TABMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789341A6B17F400B407C3 /* TABMapView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		9427892A1A5F3F3700B407C3 /* TABUIUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABUIUtil.m; sourceTree = "<group>"; };
 		9427892C1A5F79C700B407C3 /* TABImageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABImageFactory.h; sourceTree = "<group>"; };
 		9427892D1A5F79C700B407C3 /* TABImageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABImageFactory.m; sourceTree = "<group>"; };
+		942789301A6B17C900B407C3 /* TABMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMapViewController.h; sourceTree = "<group>"; };
+		942789311A6B17C900B407C3 /* TABMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMapViewController.m; sourceTree = "<group>"; };
+		942789331A6B17F400B407C3 /* TABMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMapView.h; sourceTree = "<group>"; };
+		942789341A6B17F400B407C3 /* TABMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMapView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		942788E21A5F1F8700B407C3 /* TAB */ = {
 			isa = PBXGroup;
 			children = (
+				9427892F1A6B178B00B407C3 /* mapView */,
 				9427890D1A5F206800B407C3 /* services */,
 				9427890C1A5F205D00B407C3 /* models */,
 				9427890B1A5F204A00B407C3 /* createAccountView */,
@@ -204,6 +211,17 @@
 				942789211A5F2BC000B407C3 /* TABAccountServices.m */,
 			);
 			name = services;
+			sourceTree = "<group>";
+		};
+		9427892F1A6B178B00B407C3 /* mapView */ = {
+			isa = PBXGroup;
+			children = (
+				942789301A6B17C900B407C3 /* TABMapViewController.h */,
+				942789311A6B17C900B407C3 /* TABMapViewController.m */,
+				942789331A6B17F400B407C3 /* TABMapView.h */,
+				942789341A6B17F400B407C3 /* TABMapView.m */,
+			);
+			name = mapView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9427891F1A5F2A9300B407C3 /* TABCreateAccountView.m in Sources */,
+				942789321A6B17C900B407C3 /* TABMapViewController.m in Sources */,
 				942789161A5F2A3B00B407C3 /* TABSignInView.m in Sources */,
 				942789101A5F239E00B407C3 /* TABInitialViewController.m in Sources */,
 				942789131A5F23C300B407C3 /* TABInitialView.m in Sources */,
@@ -316,6 +335,7 @@
 				942789251A5F2C0A00B407C3 /* TABSignInModel.m in Sources */,
 				942788E91A5F1F8700B407C3 /* AppDelegate.m in Sources */,
 				942788E61A5F1F8700B407C3 /* main.m in Sources */,
+				942789351A6B17F400B407C3 /* TABMapView.m in Sources */,
 				9427892E1A5F79C700B407C3 /* TABImageFactory.m in Sources */,
 				942789221A5F2BC000B407C3 /* TABAccountServices.m in Sources */,
 			);
@@ -500,6 +520,7 @@
 				942789051A5F1F8700B407C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		942789061A5F1F8700B407C3 /* Build configuration list for PBXNativeTarget "TABTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +529,7 @@
 				942789081A5F1F8700B407C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

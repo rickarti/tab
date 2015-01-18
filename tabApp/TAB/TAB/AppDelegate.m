@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TABInitialViewController.h"
+#import "TABMapViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,10 @@
     [self.window makeKeyAndVisible];
                    
     return YES;
+}
+
+- (void) loadMapView {
+    self.window.rootViewController = [TABMapViewController new];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

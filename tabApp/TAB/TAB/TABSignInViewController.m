@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Okidok Studios. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "TABSignInViewController.h"
 #import "TABSignInView.h"
 #import "TABAccountServices.h"
@@ -54,6 +55,8 @@
         return;
     }
     NSLog(@"TODO: Sign in success, transition to next view");
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate loadMapView];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
