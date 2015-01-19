@@ -29,6 +29,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    // done button was pressed - dismiss keyboard
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void) doCancel {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+-(void) doSetLocation {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
 /*
 #pragma mark - Navigation
 

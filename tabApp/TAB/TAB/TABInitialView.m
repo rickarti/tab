@@ -17,9 +17,14 @@
     self.backgroundColor = [UIColor blackColor];
     
     UIView *imageContainer = [UIView new];
-    imageContainer.backgroundColor = [UIColor lightGrayColor];
+    // imageContainer.backgroundColor = [UIColor blackColor];
     imageContainer.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:imageContainer];
+    
+//    UIImage *tabLogoImage = [UIImage imageNamed:@"tab.png"];
+//    UIImageView *tabLogo = [[UIImageView alloc] initWithImage:tabLogoImage];
+//    tabLogo.translatesAutoresizingMaskIntoConstraints = NO;
+//    [imageContainer addSubview:tabLogo];
     
     UIButton *createAccountButton = [[UIButton alloc] init];
     createAccountButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -49,7 +54,10 @@
                                                                    createAccountButton);
     
     [self addConstraints:[NSLayoutConstraint
-                          constraintsWithVisualFormat: @"V:|-[imageContainer]-[createAccountButton]-20-[signInButton]-40-|"
+                          constraintsWithVisualFormat: @"V:|-20-[imageContainer]-[createAccountButton]-20-[signInButton]-40-|"
+                          options:0 metrics:nil views:viewsDictionary]];
+    [self addConstraints:[NSLayoutConstraint
+                          constraintsWithVisualFormat: @"H:|-20-[imageContainer]-20-|"
                           options:0 metrics:nil views:viewsDictionary]];
     [self addConstraints:[NSLayoutConstraint
                           constraintsWithVisualFormat: @"H:|-20-[signInButton]-20-|"
@@ -57,6 +65,15 @@
     [self addConstraints:[NSLayoutConstraint
                           constraintsWithVisualFormat: @"H:|-20-[createAccountButton]-20-|"
                           options:0 metrics:nil views:viewsDictionary]];
+    
+//    [imageContainer addConstraint:[NSLayoutConstraint constraintWithItem:imageContainer attribute:NSLayoutAttributeCenterY
+//                                                     relatedBy:NSLayoutRelationEqual
+//                                                        toItem:tabLogo attribute:NSLayoutAttributeCenterY
+//                                                    multiplier:1 constant:0.0]];
+//    [imageContainer addConstraint:[NSLayoutConstraint constraintWithItem:imageContainer attribute:NSLayoutAttributeCenterX
+//                                                               relatedBy:NSLayoutRelationEqual
+//                                                                  toItem:tabLogo attribute:NSLayoutAttributeCenterX
+//                                                              multiplier:1 constant:0.0]];
 }
 
 - (TABInitialViewController *)viewController {

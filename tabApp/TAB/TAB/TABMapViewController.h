@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TABMapViewController : UIViewController
+@interface TABMapViewController : UIViewController <UITextFieldDelegate>
+
+-(void) doCancel;
+
+-(void) doSetLocation;
 
 @end

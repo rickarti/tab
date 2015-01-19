@@ -88,7 +88,7 @@
     [self addSubview:createAccountButton];
     
     // Layout Components
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(scrollView, _validationMessageLabel, createAccountButton);
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(scrollView, _validationMessageLabel, createAccountButton, scrollContentView);
     
     [self addConstraints:[NSLayoutConstraint
                           constraintsWithVisualFormat: @"V:|[scrollView]|"
@@ -110,8 +110,9 @@
                           constraintsWithVisualFormat: @"H:|-20-[createAccountButton]-20-|"
                           options:0 metrics:nil views:viewsDictionary]];
     
+    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:scrollContentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:scrollView attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
     
-    // [scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scrollContentView]|" options:0 metrics:nil views:viewsDictionary]];
+    [scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scrollContentView]|" options:0 metrics:nil views:viewsDictionary]];
 }
 
 - (UIView *) getScrollContentView {

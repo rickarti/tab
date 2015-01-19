@@ -25,6 +25,8 @@
 		9427892E1A5F79C700B407C3 /* TABImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427892D1A5F79C700B407C3 /* TABImageFactory.m */; };
 		942789321A6B17C900B407C3 /* TABMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789311A6B17C900B407C3 /* TABMapViewController.m */; };
 		942789351A6B17F400B407C3 /* TABMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789341A6B17F400B407C3 /* TABMapView.m */; };
+		9427893B1A6C703000B407C3 /* tab_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9427893A1A6C703000B407C3 /* tab_logo.png */; };
+		9427893D1A6C747900B407C3 /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 9427893C1A6C747900B407C3 /* tab.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		942789311A6B17C900B407C3 /* TABMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMapViewController.m; sourceTree = "<group>"; };
 		942789331A6B17F400B407C3 /* TABMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMapView.h; sourceTree = "<group>"; };
 		942789341A6B17F400B407C3 /* TABMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMapView.m; sourceTree = "<group>"; };
+		9427893A1A6C703000B407C3 /* tab_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_logo.png; sourceTree = "<group>"; };
+		9427893C1A6C747900B407C3 /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				942788E41A5F1F8700B407C3 /* Info.plist */,
+				9427893C1A6C747900B407C3 /* tab.png */,
+				9427893A1A6C703000B407C3 /* tab_logo.png */,
 				942788E51A5F1F8700B407C3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -273,6 +279,7 @@
 				TargetAttributes = {
 					942788DF1A5F1F8700B407C3 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 6PG8X4N627;
 					};
 					942788F81A5F1F8700B407C3 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -305,7 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				942788F41A5F1F8700B407C3 /* LaunchScreen.xib in Resources */,
+				9427893D1A6C747900B407C3 /* tab.png in Resources */,
 				942788F11A5F1F8700B407C3 /* Images.xcassets in Resources */,
+				9427893B1A6C703000B407C3 /* tab_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,20 +459,28 @@
 		942789041A5F1F8700B407C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TAB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		942789051A5F1F8700B407C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TAB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
