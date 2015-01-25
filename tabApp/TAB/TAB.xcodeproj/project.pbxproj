@@ -25,6 +25,7 @@
 		9427892E1A5F79C700B407C3 /* TABImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427892D1A5F79C700B407C3 /* TABImageFactory.m */; };
 		942789321A6B17C900B407C3 /* TABMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789311A6B17C900B407C3 /* TABMapViewController.m */; };
 		942789351A6B17F400B407C3 /* TABMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789341A6B17F400B407C3 /* TABMapView.m */; };
+		943D1B651A74571E00228208 /* TABLogoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D1B641A74571E00228208 /* TABLogoContainerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		942789311A6B17C900B407C3 /* TABMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMapViewController.m; sourceTree = "<group>"; };
 		942789331A6B17F400B407C3 /* TABMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMapView.h; sourceTree = "<group>"; };
 		942789341A6B17F400B407C3 /* TABMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMapView.m; sourceTree = "<group>"; };
+		943D1B631A74571E00228208 /* TABLogoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABLogoContainerView.h; sourceTree = "<group>"; };
+		943D1B641A74571E00228208 /* TABLogoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABLogoContainerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 				9427890F1A5F239E00B407C3 /* TABInitialViewController.m */,
 				942789111A5F23C300B407C3 /* TABInitialView.h */,
 				942789121A5F23C300B407C3 /* TABInitialView.m */,
+				943D1B631A74571E00228208 /* TABLogoContainerView.h */,
+				943D1B641A74571E00228208 /* TABLogoContainerView.m */,
 			);
 			name = initialView;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				942789131A5F23C300B407C3 /* TABInitialView.m in Sources */,
 				9427891C1A5F2A7000B407C3 /* TABCreateAccountViewController.m in Sources */,
 				9427892B1A5F3F3700B407C3 /* TABUIUtil.m in Sources */,
+				943D1B651A74571E00228208 /* TABLogoContainerView.m in Sources */,
 				942789191A5F2A5200B407C3 /* TABSignInViewController.m in Sources */,
 				942789281A5F2C2300B407C3 /* TABCreateAccountModel.m in Sources */,
 				942789251A5F2C0A00B407C3 /* TABSignInModel.m in Sources */,

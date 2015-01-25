@@ -9,6 +9,7 @@
 #import "TABInitialView.h"
 #import "TABInitialViewController.h"
 #import "TABUIUtil.h"
+#import "TABLogoContainerView.h"
 
 @implementation TABInitialView
 
@@ -16,9 +17,10 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
     self.backgroundColor = [UIColor blackColor];
     
-    UIView *imageContainer = [UIView new];
+    TABLogoContainerView *imageContainer = [TABLogoContainerView new];
     // imageContainer.backgroundColor = [UIColor blackColor];
     imageContainer.translatesAutoresizingMaskIntoConstraints = NO;
+    imageContainer.backgroundColor = [UIColor darkGrayColor];
     [self addSubview:imageContainer];
     
     UIImage *tabLogoImage = [UIImage imageNamed:@"TabLogo"];
@@ -54,10 +56,10 @@
                                                                    createAccountButton);
     
     [self addConstraints:[NSLayoutConstraint
-                          constraintsWithVisualFormat: @"V:|-20-[imageContainer]-[createAccountButton]-20-[signInButton]-40-|"
+                          constraintsWithVisualFormat: @"V:|[imageContainer][createAccountButton]-20-[signInButton]-40-|"
                           options:0 metrics:nil views:viewsDictionary]];
     [self addConstraints:[NSLayoutConstraint
-                          constraintsWithVisualFormat: @"H:|-20-[imageContainer]-20-|"
+                          constraintsWithVisualFormat: @"H:|[imageContainer]|"
                           options:0 metrics:nil views:viewsDictionary]];
     [self addConstraints:[NSLayoutConstraint
                           constraintsWithVisualFormat: @"H:|-20-[signInButton]-20-|"

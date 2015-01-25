@@ -43,9 +43,9 @@
     if ([[self createAccountView].emailTextField.text length] < 5) {
         [self createAccountView].emailTextField.text = nil;
     }
-    if (![[self createAccountView].emailTextField.text containsString:@"@"]) {
-        [self createAccountView].emailTextField.text = nil;
-    }
+//    if (![[self createAccountView].emailTextField.text containsString:@"@"]) {
+//        [self createAccountView].emailTextField.text = nil;
+//    }
     if ([[self createAccountView].zipCodeTextField.text length] != 5) {
         [self createAccountView].zipCodeTextField.text = nil;
     }
