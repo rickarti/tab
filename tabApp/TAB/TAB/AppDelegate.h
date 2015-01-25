@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 - (void) loadMapView;
+- (void) loadMenuView;
 
 @end
 

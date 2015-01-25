@@ -8,6 +8,7 @@
 
 #import "TABMapViewController.h"
 #import "TABMapView.h"
+#import "AppDelegate.h"
 
 @interface TABMapViewController ()
 
@@ -41,6 +42,11 @@
 
 -(void) doSetLocation {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    // TODO: First we will validate and set the location in the Model
+    // Then tell the AppDelegate the Load the TabMenuNavigationController
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate loadMenuView];
+    
 }
 
 /*

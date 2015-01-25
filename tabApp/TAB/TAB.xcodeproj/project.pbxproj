@@ -26,6 +26,7 @@
 		942789321A6B17C900B407C3 /* TABMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789311A6B17C900B407C3 /* TABMapViewController.m */; };
 		942789351A6B17F400B407C3 /* TABMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789341A6B17F400B407C3 /* TABMapView.m */; };
 		943D1B651A74571E00228208 /* TABLogoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D1B641A74571E00228208 /* TABLogoContainerView.m */; };
+		943D1B681A753D7300228208 /* TABContainerMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D1B671A753D7300228208 /* TABContainerMenuItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		942789341A6B17F400B407C3 /* TABMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMapView.m; sourceTree = "<group>"; };
 		943D1B631A74571E00228208 /* TABLogoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABLogoContainerView.h; sourceTree = "<group>"; };
 		943D1B641A74571E00228208 /* TABLogoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABLogoContainerView.m; sourceTree = "<group>"; };
+		943D1B661A753D7300228208 /* TABContainerMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABContainerMenuItem.h; sourceTree = "<group>"; };
+		943D1B671A753D7300228208 /* TABContainerMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABContainerMenuItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				942789241A5F2C0A00B407C3 /* TABSignInModel.m */,
 				942789261A5F2C2300B407C3 /* TABCreateAccountModel.h */,
 				942789271A5F2C2300B407C3 /* TABCreateAccountModel.m */,
+				943D1B661A753D7300228208 /* TABContainerMenuItem.h */,
+				943D1B671A753D7300228208 /* TABContainerMenuItem.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				9427892B1A5F3F3700B407C3 /* TABUIUtil.m in Sources */,
 				943D1B651A74571E00228208 /* TABLogoContainerView.m in Sources */,
 				942789191A5F2A5200B407C3 /* TABSignInViewController.m in Sources */,
+				943D1B681A753D7300228208 /* TABContainerMenuItem.m in Sources */,
 				942789281A5F2C2300B407C3 /* TABCreateAccountModel.m in Sources */,
 				942789251A5F2C0A00B407C3 /* TABSignInModel.m in Sources */,
 				942788E91A5F1F8700B407C3 /* AppDelegate.m in Sources */,
