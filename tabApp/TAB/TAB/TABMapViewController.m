@@ -46,7 +46,6 @@
     // Then tell the AppDelegate the Load the TabMenuNavigationController
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate loadMenuView];
-    
 }
 
 /*

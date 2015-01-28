@@ -27,6 +27,8 @@
 		942789351A6B17F400B407C3 /* TABMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 942789341A6B17F400B407C3 /* TABMapView.m */; };
 		943D1B651A74571E00228208 /* TABLogoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D1B641A74571E00228208 /* TABLogoContainerView.m */; };
 		943D1B681A753D7300228208 /* TABContainerMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D1B671A753D7300228208 /* TABContainerMenuItem.m */; };
+		948A60CA1A774B5700578125 /* TABMenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A60C91A774B5700578125 /* TABMenuListViewController.m */; };
+		948A60CD1A78A0B300578125 /* TABMenuServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A60CC1A78A0B300578125 /* TABMenuServices.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 		943D1B641A74571E00228208 /* TABLogoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABLogoContainerView.m; sourceTree = "<group>"; };
 		943D1B661A753D7300228208 /* TABContainerMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABContainerMenuItem.h; sourceTree = "<group>"; };
 		943D1B671A753D7300228208 /* TABContainerMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABContainerMenuItem.m; sourceTree = "<group>"; };
+		948A60C81A774B5700578125 /* TABMenuListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMenuListViewController.h; sourceTree = "<group>"; };
+		948A60C91A774B5700578125 /* TABMenuListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuListViewController.m; sourceTree = "<group>"; };
+		948A60CB1A78A0B300578125 /* TABMenuServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMenuServices.h; sourceTree = "<group>"; };
+		948A60CC1A78A0B300578125 /* TABMenuServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuServices.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		942788E21A5F1F8700B407C3 /* TAB */ = {
 			isa = PBXGroup;
 			children = (
+				948A60C41A77471100578125 /* menuView */,
 				9427892F1A6B178B00B407C3 /* mapView */,
 				9427890D1A5F206800B407C3 /* services */,
 				9427890C1A5F205D00B407C3 /* models */,
@@ -219,6 +226,8 @@
 			children = (
 				942789201A5F2BC000B407C3 /* TABAccountServices.h */,
 				942789211A5F2BC000B407C3 /* TABAccountServices.m */,
+				948A60CB1A78A0B300578125 /* TABMenuServices.h */,
+				948A60CC1A78A0B300578125 /* TABMenuServices.m */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -232,6 +241,15 @@
 				942789341A6B17F400B407C3 /* TABMapView.m */,
 			);
 			name = mapView;
+			sourceTree = "<group>";
+		};
+		948A60C41A77471100578125 /* menuView */ = {
+			isa = PBXGroup;
+			children = (
+				948A60C81A774B5700578125 /* TABMenuListViewController.h */,
+				948A60C91A774B5700578125 /* TABMenuListViewController.m */,
+			);
+			name = menuView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948A60CA1A774B5700578125 /* TABMenuListViewController.m in Sources */,
 				9427891F1A5F2A9300B407C3 /* TABCreateAccountView.m in Sources */,
 				942789321A6B17C900B407C3 /* TABMapViewController.m in Sources */,
 				942789161A5F2A3B00B407C3 /* TABSignInView.m in Sources */,
@@ -350,6 +369,7 @@
 				942788E61A5F1F8700B407C3 /* main.m in Sources */,
 				942789351A6B17F400B407C3 /* TABMapView.m in Sources */,
 				9427892E1A5F79C700B407C3 /* TABImageFactory.m in Sources */,
+				948A60CD1A78A0B300578125 /* TABMenuServices.m in Sources */,
 				942789221A5F2BC000B407C3 /* TABAccountServices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

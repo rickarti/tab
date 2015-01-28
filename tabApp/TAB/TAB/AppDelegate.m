@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "TABInitialViewController.h"
 #import "TABMapViewController.h"
+#import "TABMenuListViewController.h"
 
 @interface AppDelegate ()
 
@@ -35,8 +36,9 @@
 }
 
 - (void) loadMenuView {
-    UITableViewController *menuTableViewController = [[UITableViewController alloc] init];
-    UINavigationController *menuViewController = [[UINavigationController alloc] initWithRootViewController:menuTableViewController];
+    TABMenuListViewController *menuListViewController = [[TABMenuListViewController alloc] init];
+    UINavigationController *menuViewController = [[UINavigationController alloc] initWithRootViewController:menuListViewController];
+    [menuViewController setToolbarHidden:NO animated:YES];
     self.window.rootViewController = menuViewController;
 }
 
