@@ -54,10 +54,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    TABMenuServices *menuServices = [TABMenuServices new];
+    TABMenuServices *menuServices = [TABMenuServices sharedService];
     TABContainerMenuItem *item = [[menuServices getTopLevelMenu].children objectAtIndex:indexPath.row];
     
     cell.textLabel.text = item.name;
+    
+    // POST : How to show the disclosure Chevron in a UITableViewCell
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -66,7 +69,7 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    TABMenuServices *menuServices = [TABMenuServices new];
+    TABMenuServices *menuServices = [TABMenuServices sharedService];
     return [menuServices getTopLevelMenu].children.count;
 }
 

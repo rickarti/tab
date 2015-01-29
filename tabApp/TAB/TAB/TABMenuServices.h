@@ -11,6 +11,10 @@
 
 @interface TABMenuServices : NSObject
 
+@property TABContainerMenuItem *topLevelMenu;
+
++ (id)sharedService;
+
 -(TABContainerMenuItem *) getTopLevelMenu;
 
 @end

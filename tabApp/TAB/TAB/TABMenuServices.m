@@ -11,21 +11,32 @@
 
 @implementation TABMenuServices
 
++ (id)sharedService {
+    static TABMenuServices *sharedService = nil;
+    @synchronized(self) {
+        if (sharedService == nil)
+            sharedService = [[self alloc] init];
+    }
+    return sharedService;
+}
+
 -(TABContainerMenuItem *) getTopLevelMenu {
     
-    TABContainerMenuItem *topLevelMenu = [[TABContainerMenuItem alloc] init];
+    if (!self.topLevelMenu) {
+
+        _topLevelMenu = [[TABContainerMenuItem alloc] init];
     
-    TABContainerMenuItem *beer = [[TABContainerMenuItem alloc] init];
-    TABContainerMenuItem *wine = [[TABContainerMenuItem alloc] init];
-    TABContainerMenuItem *liquor = [[TABContainerMenuItem alloc] init];
+        TABContainerMenuItem *beer = [[TABContainerMenuItem alloc] init];
+        TABContainerMenuItem *wine = [[TABContainerMenuItem alloc] init];
+        TABContainerMenuItem *liquor = [[TABContainerMenuItem alloc] init];
     
-    beer.name = @"BEER";
-    wine.name = @"WINE";
-    liquor.name = @"LIQUOR";
+        beer.name = @"BEER";
+        wine.name = @"WINE";
+        liquor.name = @"LIQUOR";
     
-    topLevelMenu.children = [NSArray arrayWithObjects:beer, wine, liquor, nil];
-   
-    return topLevelMenu;
+        _topLevelMenu.children = [NSArray arrayWithObjects:beer, wine, liquor, nil];
+    }
+    return _topLevelMenu;
 }
 
 @end
