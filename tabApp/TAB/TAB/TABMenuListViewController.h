@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TABContainerMenuItem;
 
 @interface TABMenuListViewController : UITableViewController
+
+@property TABContainerMenuItem* containerMenuItem;
+
+-(instancetype)initWithMenuItem:(TABContainerMenuItem*) item NS_DESIGNATED_INITIALIZER;
 
 @end

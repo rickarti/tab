@@ -7,7 +7,6 @@
 //
 
 #import "TABMenuListViewController.h"
-#import "TABMenuServices.h"
 #import "TABContainerMenuItem.h"
 
 @interface TABMenuListViewController ()
@@ -16,17 +15,19 @@
 
 @implementation TABMenuListViewController
 
+-(instancetype)initWithMenuItem:(TABContainerMenuItem*) item {
+    self = [super init];
+    if (self) {
+        self.containerMenuItem = item;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImage *logoTitleImage = [UIImage imageNamed:@"TabLogoNavigationTitle"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoTitleImage];
-    //UITableView *tableView = [UITableView new];
     self.tableView.dataSource = self;
-    // self.view = tableView; // [[TABMenuListView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    if(self.view){
-//        [((TABMenuListView*)self.view) configureView];
-//    }
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,8 +55,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    TABMenuServices *menuServices = [TABMenuServices sharedService];
-    TABContainerMenuItem *item = [[menuServices getTopLevelMenu].children objectAtIndex:indexPath.row];
+    TABContainerMenuItem *item = [self.containerMenuItem.children objectAtIndex:indexPath.row];
     
     cell.textLabel.text = item.name;
     
@@ -68,9 +68,20 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    TABMenuServices *menuServices = [TABMenuServices sharedService];
-    return [menuServices getTopLevelMenu].children.count;
+    //TABMenuServices *menuServices = [TABMenuServices sharedService];
+    return self.containerMenuItem.children.count;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    TABContainerMenuItem* selectedMenuItem = [self.containerMenuItem.children objectAtIndex:indexPath.row];
+    TABMenuListViewController *menuListViewController = [[TABMenuListViewController alloc] initWithMenuItem:selectedMenuItem];
+    [self.navigationController pushViewController:menuListViewController animated:YES];
+}
+
+
 
 @end

@@ -10,4 +10,22 @@
 
 @implementation TABContainerMenuItem
 
+-(instancetype)initWithName:(NSString*) name {
+    return [self initWithName:name menuItemType:TABContainerMenuItemTypeCategory];
+}
+
+-(instancetype)initWithName:(NSString*) name menuItemType:(TABMenuItemType) type {
+    return [self initWithName:name menuItemType:type children:nil];
+}
+
+-(instancetype)initWithName:(NSString*) name menuItemType:(TABMenuItemType) type children:(NSArray*) children {
+    self = [super init];
+    if (self) {
+        _name = name;
+        _type = type;
+        _children = children;
+    }
+    return self;
+}
+
 @end
