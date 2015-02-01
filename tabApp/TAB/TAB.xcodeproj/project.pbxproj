@@ -29,6 +29,7 @@
 		943D1B681A753D7300228208 /* TABContainerMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 943D1B671A753D7300228208 /* TABContainerMenuItem.m */; };
 		948A60CA1A774B5700578125 /* TABMenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A60C91A774B5700578125 /* TABMenuListViewController.m */; };
 		948A60CD1A78A0B300578125 /* TABMenuServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A60CC1A78A0B300578125 /* TABMenuServices.m */; };
+		948A60D01A7B316100578125 /* TABMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A60CF1A7B316100578125 /* TABMenuItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		948A60C91A774B5700578125 /* TABMenuListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuListViewController.m; sourceTree = "<group>"; };
 		948A60CB1A78A0B300578125 /* TABMenuServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMenuServices.h; sourceTree = "<group>"; };
 		948A60CC1A78A0B300578125 /* TABMenuServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuServices.m; sourceTree = "<group>"; };
+		948A60CE1A7B316100578125 /* TABMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMenuItem.h; sourceTree = "<group>"; };
+		948A60CF1A7B316100578125 /* TABMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,8 @@
 				942789271A5F2C2300B407C3 /* TABCreateAccountModel.m */,
 				943D1B661A753D7300228208 /* TABContainerMenuItem.h */,
 				943D1B671A753D7300228208 /* TABContainerMenuItem.m */,
+				948A60CE1A7B316100578125 /* TABMenuItem.h */,
+				948A60CF1A7B316100578125 /* TABMenuItem.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				948A60CA1A774B5700578125 /* TABMenuListViewController.m in Sources */,
 				9427891F1A5F2A9300B407C3 /* TABCreateAccountView.m in Sources */,
 				942789321A6B17C900B407C3 /* TABMapViewController.m in Sources */,
+				948A60D01A7B316100578125 /* TABMenuItem.m in Sources */,
 				942789161A5F2A3B00B407C3 /* TABSignInView.m in Sources */,
 				942789101A5F239E00B407C3 /* TABInitialViewController.m in Sources */,
 				942789131A5F23C300B407C3 /* TABInitialView.m in Sources */,

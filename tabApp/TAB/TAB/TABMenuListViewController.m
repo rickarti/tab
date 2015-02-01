@@ -49,14 +49,15 @@
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     static NSString *CellIdentifier = @"CellID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    TABContainerMenuItem *item = [self.containerMenuItem.children objectAtIndex:indexPath.row];
-    
+    TABContainerMenuItem *section = [self.containerMenuItem.children objectAtIndex:indexPath.section];
+    TABContainerMenuItem *item = [section.children objectAtIndex:indexPath.row];
     cell.textLabel.text = item.name;
     
     // POST : How to show the disclosure Chevron in a UITableViewCell
@@ -66,20 +67,34 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    return self.containerMenuItem.children.count;
+    // POST - MAX and MIN Macros
+    // return MAX(sections,1);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     //TABMenuServices *menuServices = [TABMenuServices sharedService];
-    return self.containerMenuItem.children.count;
+    NSLog(@"Section: %li", (long)section);
+    TABContainerMenuItem *sectionItem = [self.containerMenuItem.children objectAtIndex:section];
+    return sectionItem.children.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
-    TABContainerMenuItem* selectedMenuItem = [self.containerMenuItem.children objectAtIndex:indexPath.row];
-    TABMenuListViewController *menuListViewController = [[TABMenuListViewController alloc] initWithMenuItem:selectedMenuItem];
+    TABContainerMenuItem* selectedSection = [self.containerMenuItem.children objectAtIndex:indexPath.section];
+    TABContainerMenuItem* selectedItem = [selectedSection.children objectAtIndex:indexPath.row];
+    TABMenuListViewController *menuListViewController = [[TABMenuListViewController alloc] initWithMenuItem:selectedItem];
     [self.navigationController pushViewController:menuListViewController animated:YES];
+}
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    TABContainerMenuItem *sectionItem = [self.containerMenuItem.children objectAtIndex:section];
+    return sectionItem.name;
 }
 
 
