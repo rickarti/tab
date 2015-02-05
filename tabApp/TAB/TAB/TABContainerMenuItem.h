@@ -21,8 +21,10 @@ typedef NS_ENUM(NSInteger, TABMenuItemType) {
 @property NSArray *children;
 @property TABMenuItemType type;
 
+
 -(instancetype)initWithName:(NSString*) name;
 -(instancetype)initWithName:(NSString*) name menuItemType:(TABMenuItemType) type;
 -(instancetype)initWithName:(NSString*) name menuItemType:(TABMenuItemType) type children:(NSArray*)children NS_DESIGNATED_INITIALIZER;
 
 @end
+

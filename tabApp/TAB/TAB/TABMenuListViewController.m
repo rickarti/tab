@@ -7,7 +7,9 @@
 //
 
 #import "TABMenuListViewController.h"
+#import "TABMenuDetailViewController.h"
 #import "TABContainerMenuItem.h"
+#import "TABMenuItem.h"
 
 @interface TABMenuListViewController ()
 
@@ -85,14 +87,23 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
     TABContainerMenuItem* selectedSection = [self.containerMenuItem.children objectAtIndex:indexPath.section];
-    TABContainerMenuItem* selectedItem = [selectedSection.children objectAtIndex:indexPath.row];
-    TABMenuListViewController *menuListViewController = [[TABMenuListViewController alloc] initWithMenuItem:selectedItem];
-    [self.navigationController pushViewController:menuListViewController animated:YES];
+    NSObject* selectedItem = [selectedSection.children objectAtIndex:indexPath.row];
+    
+    // TODO : Check if this is a TABContainerMenuItem or a Tab Menu Item
+    if ([selectedItem respondsToSelector:@selector(children)]) {
+        TABMenuListViewController *menuListViewController = [[TABMenuListViewController alloc] initWithMenuItem:(TABContainerMenuItem*)selectedItem];
+        [self.navigationController pushViewController:menuListViewController animated:YES];
+    } else {
+        TABMenuDetailViewController *menuDetailViewController = [[TABMenuDetailViewController alloc] initWithMenuItem:(TABMenuItem*)selectedItem];
+        [self.navigationController pushViewController:menuDetailViewController animated:YES];
+    }
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    // TODO : Check if this is a TABContainerMenuItem or a Tab Menu Item
+    
     TABContainerMenuItem *sectionItem = [self.containerMenuItem.children objectAtIndex:section];
     return sectionItem.name;
 }

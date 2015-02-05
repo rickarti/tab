@@ -30,6 +30,8 @@
 		948A60CA1A774B5700578125 /* TABMenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A60C91A774B5700578125 /* TABMenuListViewController.m */; };
 		948A60CD1A78A0B300578125 /* TABMenuServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A60CC1A78A0B300578125 /* TABMenuServices.m */; };
 		948A60D01A7B316100578125 /* TABMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 948A60CF1A7B316100578125 /* TABMenuItem.m */; };
+		94D42D611A7E9D0D00070FCC /* TABMenuDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D42D601A7E9D0D00070FCC /* TABMenuDetailViewController.m */; };
+		94D42D641A7EAB2600070FCC /* TABMenuDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D42D631A7EAB2600070FCC /* TABMenuDetailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,10 @@
 		948A60CC1A78A0B300578125 /* TABMenuServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuServices.m; sourceTree = "<group>"; };
 		948A60CE1A7B316100578125 /* TABMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMenuItem.h; sourceTree = "<group>"; };
 		948A60CF1A7B316100578125 /* TABMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuItem.m; sourceTree = "<group>"; };
+		94D42D5F1A7E9D0D00070FCC /* TABMenuDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMenuDetailViewController.h; sourceTree = "<group>"; };
+		94D42D601A7E9D0D00070FCC /* TABMenuDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuDetailViewController.m; sourceTree = "<group>"; };
+		94D42D621A7EAB2600070FCC /* TABMenuDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABMenuDetailView.h; sourceTree = "<group>"; };
+		94D42D631A7EAB2600070FCC /* TABMenuDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABMenuDetailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +136,10 @@
 		942788E21A5F1F8700B407C3 /* TAB */ = {
 			isa = PBXGroup;
 			children = (
-				948A60C41A77471100578125 /* menuView */,
-				9427892F1A6B178B00B407C3 /* mapView */,
 				9427890D1A5F206800B407C3 /* services */,
 				9427890C1A5F205D00B407C3 /* models */,
+				948A60C41A77471100578125 /* menuView */,
+				9427892F1A6B178B00B407C3 /* mapView */,
 				9427890B1A5F204A00B407C3 /* createAccountView */,
 				9427890A1A5F203400B407C3 /* signInView */,
 				942789091A5F201900B407C3 /* initialView */,
@@ -253,6 +259,10 @@
 			children = (
 				948A60C81A774B5700578125 /* TABMenuListViewController.h */,
 				948A60C91A774B5700578125 /* TABMenuListViewController.m */,
+				94D42D5F1A7E9D0D00070FCC /* TABMenuDetailViewController.h */,
+				94D42D601A7E9D0D00070FCC /* TABMenuDetailViewController.m */,
+				94D42D621A7EAB2600070FCC /* TABMenuDetailView.h */,
+				94D42D631A7EAB2600070FCC /* TABMenuDetailView.m */,
 			);
 			name = menuView;
 			sourceTree = "<group>";
@@ -372,6 +382,8 @@
 				942789281A5F2C2300B407C3 /* TABCreateAccountModel.m in Sources */,
 				942789251A5F2C0A00B407C3 /* TABSignInModel.m in Sources */,
 				942788E91A5F1F8700B407C3 /* AppDelegate.m in Sources */,
+				94D42D611A7E9D0D00070FCC /* TABMenuDetailViewController.m in Sources */,
+				94D42D641A7EAB2600070FCC /* TABMenuDetailView.m in Sources */,
 				942788E61A5F1F8700B407C3 /* main.m in Sources */,
 				942789351A6B17F400B407C3 /* TABMapView.m in Sources */,
 				9427892E1A5F79C700B407C3 /* TABImageFactory.m in Sources */,
