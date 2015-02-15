@@ -28,6 +28,7 @@
         [(TABMenuDetailView*)self.view configureView];
         self.menuItem = item;
         self.navigationItem.title = item.name;
+        ((TABMenuDetailView*)self.view).itemView.image = [UIImage imageNamed:self.menuItem.imageName];
     }
     NSLog(@"%s : bounds:%@", __PRETTY_FUNCTION__, NSStringFromCGRect(self.view.bounds));
     return self;

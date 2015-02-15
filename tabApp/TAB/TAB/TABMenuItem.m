@@ -10,12 +10,17 @@
 
 @implementation TABMenuItem
 
--(instancetype)initWithName:(NSString*) name {
+-(instancetype)initWithName:(NSString*) name image:(NSString*) imageName {
     self = [super init];
     if (self) {
         _name = name;
+        _imageName = imageName;
     }
     return self;
+}
+
+-(instancetype)initWithName:(NSString*) name {
+    return [self initWithName:name image:nil];
 }
 
 @end

@@ -41,11 +41,11 @@
         TABContainerMenuItem *sectionC = [[TABContainerMenuItem alloc] initWithName:@"C" menuItemType:TABContainerMenuItemTypeSection];
         beer.children = [NSArray arrayWithObjects: sectionA, sectionB, sectionC, nil];
         
-        TABMenuItem *arrBas = [[TABMenuItem alloc] initWithName:@"Arrogant Bastard"];
+        TABMenuItem *arrBas = [[TABMenuItem alloc] initWithName:@"Arrogant Bastard" image:@"beer"];
         sectionA.children = [NSArray arrayWithObjects: arrBas, nil];
-        TABMenuItem *bud = [[TABMenuItem alloc] initWithName:@"Budweiser"];
+        TABMenuItem *bud = [[TABMenuItem alloc] initWithName:@"Budweiser" image:@"beer"];
         sectionB.children = [NSArray arrayWithObjects: bud, nil];
-        TABMenuItem *coors = [[TABMenuItem alloc] initWithName:@"Coors"];
+        TABMenuItem *coors = [[TABMenuItem alloc] initWithName:@"Coors" image:@"beer"];
         sectionC.children = [NSArray arrayWithObjects: coors, nil];
         
         TABContainerMenuItem *liquorSection = [[TABContainerMenuItem alloc] initWithName:nil menuItemType:TABContainerMenuItemTypeSection];
@@ -64,6 +64,18 @@
         TABContainerMenuItem *sparkling = [[TABContainerMenuItem alloc] initWithName:@"SPARKLING" menuItemType:TABContainerMenuItemTypeCategory];
         wineSection.children = [NSArray arrayWithObjects: red, white, sparkling, nil];
         wine.children = [NSArray arrayWithObjects: wineSection, nil];
+        
+        
+        TABMenuItem *napaCellarsCabernet = [[TABMenuItem alloc] initWithName:@"Napa Cellars Cabernet Sauvignon" image:@"wine"];
+        TABContainerMenuItem *redWineSection = [[TABContainerMenuItem alloc] initWithName:nil menuItemType:TABContainerMenuItemTypeSection];
+        redWineSection.children = [NSArray arrayWithObjects: napaCellarsCabernet, nil];
+        red.children = [NSArray arrayWithObjects: redWineSection, nil];
+        
+        TABMenuItem *charlesKrugSauvignon = [[TABMenuItem alloc] initWithName:@"Charles Krug Sauvignon Blanc" image:@"wine"];
+        TABContainerMenuItem *whiteWineSection = [[TABContainerMenuItem alloc] initWithName:nil menuItemType:TABContainerMenuItemTypeSection];
+        whiteWineSection.children = [NSArray arrayWithObjects: charlesKrugSauvignon, nil];
+        white.children = [NSArray arrayWithObjects: whiteWineSection, nil];
+        
         
         _topLevelMenu.children = [NSArray arrayWithObjects:topLevelSection, nil];
     }

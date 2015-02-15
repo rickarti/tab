@@ -10,6 +10,10 @@
 
 @interface TABMenuDetailView : UIView
 
+@property UIImageView *itemView;
+@property UITextField *itemSizeSelect;
+@property UILabel *itemCost;
+
 - (void)configureView;
 
 @end

@@ -11,7 +11,9 @@
 @interface TABMenuItem : NSObject
 
 @property NSString *name;
+@property NSString *imageName;
 
--(instancetype)initWithName:(NSString*) name NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithName:(NSString*) name image:(NSString*) imageName NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithName:(NSString*) name;
 
 @end
